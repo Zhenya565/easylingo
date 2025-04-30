@@ -23,3 +23,48 @@ for (let link of hmLinks) {
     header.classList.remove("mobile-menu-opened");
   })
 }
+
+
+
+
+// кнопка наверх
+
+const upButton = document.querySelector( ".up-btn" );
+
+window.addEventListener( "scroll", () => {
+  if ( window.scrollY > 200 ) {
+    upButton.classList.remove( "hide" );
+  } else {
+    upButton.classList.add( "hide" );
+  }
+} );
+
+upButton.addEventListener( "click", () => {
+  window.scrollTo( {
+    top: 0,
+    behavior: "smooth"
+  } );
+} );
+
+
+
+
+// faq 
+
+const faqItems = document.querySelectorAll( ".faq-item" );
+
+faqItems.forEach( ( item ) => {
+  const question = item.querySelector( ".faq-item__question" );
+  const answer = item.querySelector( ".faq-item__answer" );
+
+  question.addEventListener( "click", () => {
+
+    if ( answer.style.maxHeight ) {
+      answer.style.maxHeight = null;
+      item.classList.remove('faq-item--active');
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      item.classList.add('faq-item--active');
+    }
+  } );
+} );
