@@ -3,7 +3,7 @@
 const body = document.body
 const header = document.querySelector('.header')
 const menuBurger = document.querySelector('.header__burger')
-const hmLinks = document.querySelectorAll('.header-nav ul li a')
+const hmLinks = document.querySelectorAll('.header-nav li a')
 
 
 // Mobile menu
@@ -68,3 +68,15 @@ faqItems.forEach( ( item ) => {
     }
   } );
 } );
+
+
+// переход к секции с заявкой
+
+document.querySelectorAll('[data-modal="request"]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const target = document.getElementById('request');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});

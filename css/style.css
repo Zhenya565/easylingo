@@ -420,12 +420,12 @@ textarea:focus {
 /* STYLES */
 /* burger menu */
 :root {
-    --burger-menu-color: #fff;
-    --burger-menu-width: 26px;
+    --burger-menu-color: var(--second-brand-color);
+    --burger-menu-width: 28px;
     --burger-menu-height: 22px;
     --burger-top-plus: 10px;
     --burger-top-minus: -10px;
-    --burger-line-height: 3.7px;
+    --burger-line-height: 3px;
     --burger-line-round: 5px;
 }
 
@@ -439,6 +439,7 @@ textarea:focus {
     background-color: transparent;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+    display: none;
     cursor: pointer;
 }
 
@@ -1376,10 +1377,14 @@ textarea:focus {
     text-decoration: none;
 }
 
+.main-btn--mobile {
+    display: none;
+}
+
 /* footer */
 .footer {
     margin-top: 65px;
-    padding-bottom: 20px;
+    padding-bottom: 65px;
 }
 
 .footer__top {
@@ -1500,6 +1505,249 @@ textarea:focus {
     background-image: url('data:image/svg+xml;utf8,<svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 26C10.5 26.8284 11.1716 27.5 12 27.5C12.8284 27.5 13.5 26.8284 13.5 26L10.5 26ZM13.0607 0.939341C12.4749 0.353554 11.5251 0.353554 10.9393 0.939341L1.3934 10.4853C0.807611 11.0711 0.807611 12.0208 1.3934 12.6066C1.97918 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.939341ZM12 26L13.5 26L13.5 2L12 2L10.5 2L10.5 26L12 26Z" fill="%23FFFFFF"/></svg>');
 }
 
+.about-hero-section {
+    margin-top: 5px;
+    margin-bottom: 65px;
+}
+
+.about-hero-section-inner {
+    height: 380px;
+    padding-left: 100px;
+    padding-right: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background-image: url("../img/ah-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+    max-width: 1312px;
+    padding-bottom: 20px;
+}
+
+.about-hero-section-inner__left .header-h2 {
+    margin-bottom: 24px;
+    text-align: left;
+    font-size: 56px;
+}
+
+.about-hero-section-inner__left p {
+    max-width: 550px;
+}
+
+.about-hero-img {
+    width: 320px;
+    height: 320px;
+}
+
+/* fun language learning section */
+.fun-language-learning-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.fun-language-learning-section-inner {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.fun-language-learning-section-box {
+    max-width: 780px;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 3;
+    position: relative;
+}
+
+.fun-language-learning-section-box .header-h2 {
+    margin-bottom: 24px;
+}
+
+.fun-language-learning-section-box p {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.fl-bg-left {
+    position: absolute;
+    left: 65px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+    max-width: 246px;
+    aspect-ratio: 246/263;
+}
+
+.fl-bg-right {
+    position: absolute;
+    right: 65px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+    max-width: 238px;
+    aspect-ratio: 238/255;
+}
+
+.fun-language-learning-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+}
+
+/* easylingo benefits section */
+.easylingo-benefits-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.easylingo-benefits-box {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.easylingo-benefits-box__left {
+    width: 51%;
+}
+
+.easylingo-benefits-box__left .header-h2 {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.easylingo-benefits-box__text {
+    margin-bottom: 30px;
+}
+
+.easylingo-benefits-box-p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 15px;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+}
+
+.ebb-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #000;
+    margin-bottom: 15px;
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+}
+
+.easylingo-benefits-box__right {
+    width: 49%;
+}
+
+/* how start section */
+.how-start-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.hs-text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #000;
+}
+
+.hss-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.hss-item {
+    width: calc(25% - 22.5px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.hss-item-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 20px;
+}
+
+.hss-item-header {
+    width: 100%;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #000;
+    margin-bottom: 15px;
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+}
+
+.hss-item-text {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+}
+
+.header-nav li:last-child {
+    display: none;
+}
+
+.eb-img-mob {
+    display: none;
+}
+
 @media (max-width: 1450px) {
     .first-section__img {
         right: 20px;
@@ -1512,6 +1760,29 @@ textarea:focus {
 
     .second-section {
         padding-top: 200px;
+    }
+
+    .fun-language-learning-section {
+        padding-bottom: 350px;
+    }
+
+    .fl-bg-left {
+        left: 42%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top: initial;
+        bottom: -300px;
+        z-index: 2;
+    }
+
+    .fl-bg-right {
+        left: 58%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top: initial;
+        bottom: -300px;
     }
 }
 
@@ -1613,6 +1884,66 @@ textarea:focus {
         align-items: center;
         row-gap: 30px;
     }
+
+    .hss-box {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .hss-item {
+        width: 50%;
+        max-width: 400px;
+    }
+
+    .eb-img-mob {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 25px;
+        max-width: 600px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .easylingo-benefits-box__right {
+        display: none;
+    }
+
+    .easylingo-benefits-box__left {
+        width: 100%;
+    }
+
+    .easylingo-benefits-section .header-h2 {
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .easylingo-benefits-box__text {
+        text-align: center;
+    }
+
+    .easylingo-benefits-mob-mg {
+        max-width: 600px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .ebb-title {
+        text-align: center;
+    }
+
+    .easylingo-benefits-box-p__right p,
+  .easylingo-benefits-box-p__left p {
+        text-align: center;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -1683,6 +2014,20 @@ textarea:focus {
     .footer {
         padding-bottom: 70px;
     }
+
+    .logo-box {
+        max-width: 124px;
+    }
+
+    .header-nav li a {
+        font-size: 14px;
+    }
+
+    .header-nav {
+        -webkit-column-gap: 25px;
+        -moz-column-gap: 25px;
+        column-gap: 25px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1742,6 +2087,11 @@ textarea:focus {
     .review-item {
         width: calc(50% - 10px);
     }
+
+    .about-hero-img {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1778,6 +2128,52 @@ textarea:focus {
     .first-section {
         margin-top: 40px;
         height: 380px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .logo-box {
+        max-width: 165px;
+    }
+
+    .about-hero-section-inner {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 480px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-hero-section-inner__left {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+    }
+
+    .about-hero-img {
+        width: 215px;
+        height: 215px;
+    }
+
+    .about-hero-section-inner__left .header-h2 {
+        font-size: 36px;
+    }
+
+    .about-hero-section-inner__left .header-h2 {
+        text-align: center;
+    }
+
+    .about-hero-section-inner__left p {
+        text-align: center;
     }
 }
 
@@ -1849,9 +2245,19 @@ textarea:focus {
     .third-section,
   .fourth-section,
   .fifth-section,
-  .sixth-section {
+  .sixth-section,
+  .how-start-section,
+  .easylingo-benefits-section {
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+
+    .about-hero-section {
+        margin-bottom: 50px;
+    }
+
+    .fun-language-learning-section {
+        padding-top: 50px;
     }
 
     .seventh-section {
@@ -1863,6 +2269,42 @@ textarea:focus {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .fl-bg-left {
+        left: 30px;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        bottom: -360px;
+    }
+
+    .fl-bg-right {
+        left: initial;
+        right: 30px;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+
+    .hs-text br {
+        display: none;
+    }
+
+    .how-start-section .header-h2 {
+        margin-bottom: 24px;
+    }
+
+    .hs-text {
+        font-size: 16px;
+    }
+
+    .hss-box {
+        margin-top: 32px;
+    }
+
+    .hss-box {
+        margin-bottom: 45px;
     }
 }
 
@@ -1876,6 +2318,30 @@ textarea:focus {
         -ms-flex-align: center;
         align-items: center;
         row-gap: 20px;
+    }
+
+    .easylingo-benefits-box-p {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        row-gap: 24px;
+        margin-top: 24px;
+    }
+
+    .ebb-title {
+        text-align: left;
+    }
+
+    .easylingo-benefits-box-p__right p, .easylingo-benefits-box-p__left p {
+        text-align: left;
+    }
+
+    .easylingo-benefits-box__text {
+        margin-bottom: 24px;
     }
 }
 
@@ -1908,6 +2374,33 @@ textarea:focus {
         -ms-flex-align: start;
         align-items: flex-start;
         row-gap: 10px;
+    }
+
+    .fun-language-learning-section-box p {
+        font-size: 16px;
+    }
+
+    .fun-language-learning-btn {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        row-gap: 8px;
+    }
+
+    .fun-language-learning-section-box p {
+        margin-bottom: 24px;
+    }
+
+    .fun-language-learning-section .main-btn--arrow,
+  .how-start-section .main-btn--arrow {
+        width: 188px;
+        min-width: initial;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 
@@ -2075,6 +2568,76 @@ textarea:focus {
     .main-btn--time:hover {
         background-color: var(--third-brand-color);
     }
+
+    .header__right .main-btn--additional {
+        display: none;
+    }
+
+    .header__burger {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .mobile-menu-opened .header-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        background-color: #fff;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        row-gap: 30px;
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .mobile-menu-opened .header-nav li a {
+        font-size: 16px;
+    }
+
+    .header__right .main-btn--mobile {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #465ebd;
+        height: 48px;
+    }
+
+    .logo-box {
+        max-width: 124px;
+        z-index: 5;
+        position: relative;
+    }
+
+    .header-nav li:last-child {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .about-hero-section-inner {
+        background-image: url("../img/ah-bg-mob.png");
+    }
+
+    .hss-item {
+        width: 90%;
+        max-width: initial;
+    }
 }
 
 @media (max-width: 500px) {
@@ -2120,7 +2683,7 @@ textarea:focus {
     }
 
     .logo-box {
-        max-width: 130px;
+        max-width: 124px;
     }
 
     .footer__top {
@@ -2171,7 +2734,61 @@ textarea:focus {
     }
 
     .footer {
-        margin-top: 50px;
+        margin-top: 40px;
+    }
+
+    .first-section {
+        margin-top: 10px;
+    }
+
+    .about-hero-section-inner__left .header-h2,
+  .about-hero-section-inner__left p {
+        text-align: left;
+    }
+
+    .about-hero-section-inner__left .header-h2 {
+        margin-top: 20px;
+    }
+
+    .about-hero-section-inner__left p {
+        font-size: 16px;
+    }
+
+    .hss-item-header {
+        font-size: 20px;
+    }
+
+    .hss-item-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .easylingo-benefits-box__left .ebb-title {
+        font-size: 20px;
+    }
+
+    .easylingo-benefits-box-p p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .fl-bg-left {
+        left: 10px;
+    }
+
+    .fl-bg-right {
+        right: 10px;
+    }
+
+    .hss-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-main {
+        font-size: 32px;
     }
 }
 
