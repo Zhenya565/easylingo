@@ -80,3 +80,61 @@ document.querySelectorAll('[data-modal="request"]').forEach((button) => {
     }
   });
 });
+
+
+
+// переключение вкладок
+
+document.querySelectorAll( '.courses-box' ).forEach( ( box ) => {
+  const tabButtons = box.querySelectorAll( '.courses-level-btn' );
+  const tabContents = box.querySelectorAll( '.courses-tab' );
+
+  tabButtons.forEach( ( button ) => {
+    button.addEventListener( 'click', () => {
+      // Удалить активные классы у всех кнопок
+      tabButtons.forEach( ( btn ) => btn.classList.remove( 'courses-level-btn--active' ) );
+      button.classList.add( 'courses-level-btn--active' );
+
+      // Определить тип уровня из класса
+      const levelClass = Array.from( button.classList ).find( cls =>
+        cls.startsWith( 'courses-level-btn--' ) && cls !== 'courses-level-btn--active'
+      );
+      const level = levelClass?.split( '--' )[1];
+
+      // Показать соответствующий таб
+      tabContents.forEach( ( tab ) => {
+        if ( tab.classList.contains( `courses-tab--${level}` ) ) {
+          tab.style.display = 'block';
+        } else {
+          tab.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+
+// popups
+
+const popupOverlay = document.querySelector(".popup-overlay");
+const openPopupBtns = document.querySelectorAll(".open-popup");
+const closePopupBtn = document.querySelector(".popup-close");
+
+if (popupOverlay && openPopupBtns.length > 0 && closePopupBtn) {
+    openPopupBtns.forEach(btn => {
+        btn.addEventListener("click", (evt) => {
+            evt.preventDefault();
+            popupOverlay.classList.add("active");
+        });
+    });
+
+    closePopupBtn.addEventListener("click", () => {
+        popupOverlay.classList.remove("active");
+    });
+
+    popupOverlay.addEventListener("click", (e) => {
+        if (e.target === popupOverlay) {
+            popupOverlay.classList.remove("active");
+        }
+    });
+}
