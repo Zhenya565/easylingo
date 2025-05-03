@@ -116,25 +116,155 @@ document.querySelectorAll( '.courses-box' ).forEach( ( box ) => {
 
 // popups
 
-const popupOverlay = document.querySelector(".popup-overlay");
-const openPopupBtns = document.querySelectorAll(".open-popup");
-const closePopupBtn = document.querySelector(".popup-close");
+const popupOverlay = document.querySelector( ".popup-overlay" );
 
-if (popupOverlay && openPopupBtns.length > 0 && closePopupBtn) {
-    openPopupBtns.forEach(btn => {
-        btn.addEventListener("click", (evt) => {
-            evt.preventDefault();
-            popupOverlay.classList.add("active");
-        });
-    });
+if (popupOverlay) {
+  const teacherButtons = document.querySelectorAll( "[data-teacher]" );
+  const closePopupBtns = popupOverlay.querySelectorAll( ".popup-close" );
+  const zpButtons = popupOverlay.querySelectorAll( ".zp-btn" );
 
-    closePopupBtn.addEventListener("click", () => {
-        popupOverlay.classList.remove("active");
-    });
+  const closeAllPopups = () => {
+    popupOverlay.classList.remove( "active" );
+    const allPopups = popupOverlay.querySelectorAll( ".popup" );
+    allPopups.forEach( (popup) => popup.classList.remove( "active" ) );
+  };
 
-    popupOverlay.addEventListener("click", (e) => {
-        if (e.target === popupOverlay) {
-            popupOverlay.classList.remove("active");
+  if (teacherButtons.length) {
+    teacherButtons.forEach( (btn) => {
+      btn.addEventListener( "click", (evt) => {
+        evt.preventDefault();
+        const popupId = "teacher-popup--" + btn.dataset.teacher.replace( "teacher-", "" );
+        const targetPopup = document.getElementById( popupId );
+
+        if (targetPopup) {
+          closeAllPopups();
+          targetPopup.classList.add( "active" );
+          popupOverlay.classList.add( "active" );
         }
-    });
+      } );
+    } );
+  }
+
+  if (closePopupBtns.length) {
+    closePopupBtns.forEach( (btn) => {
+      btn.addEventListener( "click", () => {
+        closeAllPopups();
+      } );
+    } );
+  }
+
+  popupOverlay.addEventListener( "click", (e) => {
+    if (e.target === popupOverlay) {
+      closeAllPopups();
+    }
+  } );
+
+  if (zpButtons.length) {
+    zpButtons.forEach( (btn) => {
+      btn.addEventListener( "click", () => {
+        closeAllPopups();
+      } );
+    } );
+  }
 }
+
+
+
+
+// Скрипт отправки формы 
+
+document.querySelectorAll( ".main-form" ).forEach( (form) => {
+  const inputs = form.querySelectorAll( ".main-input" );
+  const submitBtn = form.querySelector( ".main-submit" );
+  const successMessage = form.querySelector( ".success-message" );
+  let wasSubmitted = false;
+
+  const validateForm = () => {
+    let isValid = true;
+
+    inputs.forEach( (input) => {
+      const required = input.hasAttribute( "required" );
+      const value = input.value.trim();
+      let inputValid = true;
+
+      if (required && value === "") {
+        inputValid = false;
+      }
+
+      if (input.placeholder.includes( "электронной почты" ) && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test( value )) {
+          inputValid = false;
+        }
+      }
+
+      if (input.placeholder.includes( "телефона" )) {
+        const phoneRegex = /^[\d\+\-\s\(\)]{7,}$/;
+        if (!phoneRegex.test( value )) {
+          inputValid = false;
+        }
+      }
+
+      if (wasSubmitted) {
+        input.classList.toggle( "invalid", !inputValid );
+      }
+
+      if (!inputValid) {
+        isValid = false;
+      }
+    } );
+
+    submitBtn.disabled = !isValid;
+    return isValid;
+  };
+
+  inputs.forEach( (input) => {
+    input.addEventListener( "input", () => {
+      validateForm();
+    } );
+  } );
+
+  form.addEventListener( "submit", async (e) => {
+    e.preventDefault();
+    wasSubmitted = true;
+
+    const isValid = validateForm();
+    if (!isValid) return;
+
+    const formData = new FormData();
+    formData.append( "your-name", inputs[0].value.trim() );
+    formData.append( "your-tel", inputs[1].value.trim() );
+
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch( "send.php", {
+        method: "POST",
+        body: formData,
+      } );
+
+      const result = await res.json();
+
+      if (result.result === "success") {
+        form.reset();
+        submitBtn.disabled = true;
+        successMessage.classList.add( "show" );
+        form.classList.add('success');
+        setTimeout( () => {
+          successMessage.classList.remove( "show" );
+          form.classList.remove('success');
+        }, 7000 );
+      } else {
+        alert( result.info || "Произошла ошибка. Повторите попытку позже." );
+        console.error( result.desc || "" );
+      }
+    } catch (err) {
+      alert( "Ошибка отправки. Попробуйте позже." );
+      console.error( err );
+    } finally {
+      submitBtn.disabled = false;
+    }
+  } );
+
+  validateForm();
+} );
