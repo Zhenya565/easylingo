@@ -114,6 +114,17 @@ document.querySelectorAll( '.courses-box' ).forEach( ( box ) => {
 });
 
 
+document.querySelectorAll( ".courses-level-btn--mobile" ).forEach( (btn) => {
+  btn.addEventListener( "click", () => {
+    const tab = btn.closest( ".courses-tab" );
+    if ( tab ) {
+      tab.classList.toggle( "courses-tab--closed" );
+    }
+  });
+});
+
+
+
 // popups
 
 const popupOverlay = document.querySelector( ".popup-overlay" );
@@ -183,24 +194,22 @@ document.querySelectorAll( ".main-form" ).forEach( (form) => {
     let isValid = true;
 
     inputs.forEach( (input) => {
-      const required = input.hasAttribute( "required" );
       const value = input.value.trim();
       let inputValid = true;
-
-      if (required && value === "") {
-        inputValid = false;
-      }
-
-      if (input.placeholder.includes( "электронной почты" ) && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test( value )) {
-          inputValid = false;
-        }
-      }
 
       if (input.placeholder.includes( "телефона" )) {
         const phoneRegex = /^[\d\+\-\s\(\)]{7,}$/;
         if (!phoneRegex.test( value )) {
+          inputValid = false;
+        }
+        if (value === "") {
+          inputValid = false;
+        }
+      }
+
+      if (input.placeholder.includes( "электронной почты" ) && value !== "") {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test( value )) {
           inputValid = false;
         }
       }
@@ -209,13 +218,13 @@ document.querySelectorAll( ".main-form" ).forEach( (form) => {
         input.classList.toggle( "invalid", !inputValid );
       }
 
-      if (!inputValid) {
+      if (input.placeholder.includes( "телефона" ) && !inputValid) {
         isValid = false;
       }
     } );
 
     submitBtn.disabled = !isValid;
-    return isValid;
+    return isValid; 
   };
 
   inputs.forEach( (input) => {
@@ -249,10 +258,10 @@ document.querySelectorAll( ".main-form" ).forEach( (form) => {
         form.reset();
         submitBtn.disabled = true;
         successMessage.classList.add( "show" );
-        form.classList.add('success');
+        form.classList.add( "success" );
         setTimeout( () => {
           successMessage.classList.remove( "show" );
-          form.classList.remove('success');
+          form.classList.remove( "success" );
         }, 7000 );
       } else {
         alert( result.info || "Произошла ошибка. Повторите попытку позже." );

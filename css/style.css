@@ -1983,6 +1983,7 @@ ol li {
     font-size: 32px;
     line-height: 120%;
     color: #6c6c6c;
+    text-align: center;
 }
 
 .courses-level-btn:hover p {
@@ -2313,6 +2314,10 @@ ol li {
     display: none;
 }
 
+.courses-level-btn--mobile {
+    display: none;
+}
+
 .custom-checkbox {
     width: 20px;
     height: 20px;
@@ -2587,6 +2592,15 @@ ol li {
     border-radius: 16px;
     border: 3px solid var(--accent-color);
     overflow: hidden;
+    aspect-ratio: 646/381;
+    width: 100%;
+}
+
+.ad-box-map iframe {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .watch-full-map {
@@ -2770,6 +2784,18 @@ ol li {
 .main-input.invalid {
     border: 2px solid #f00e0e;
     background: #ffeaea;
+}
+
+@media (max-width: 1800px) {
+    .side-btns {
+        right: 25px;
+        bottom: 73px;
+    }
+
+    .up-btn {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 1450px) {
@@ -4072,6 +4098,145 @@ ol li {
     .faq-item--active .faq-item__question::after {
         right: 17px;
     }
+
+    .courses-box-levels {
+        display: none;
+    }
+
+    .courses-tabs {
+        border: none;
+        padding: 0px 0px;
+    }
+
+    .courses-tab {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 16px;
+        border: 2px solid var(--second-brand-color);
+        margin-bottom: 12px;
+        border-radius: 16px;
+        padding-bottom: 35px;
+        position: relative;
+        margin-top: 65px;
+        border-top-left-radius: 0;
+    }
+
+    .courses-tab-bottom__title {
+        font-size: 20px;
+    }
+
+    .courses-tab-bottom {
+        margin-top: 35px;
+    }
+
+    .courses-tab-bottom__right .main-btn,
+  .courses-tab-bottom__left .main-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .courses-level-btn--mobile {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        border-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: #fff;
+        background-color: transparent;
+        border-bottom: none;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border: 2px solid #78AFF6;
+        border-bottom: 0;
+        position: absolute;
+        height: 58px;
+        top: -58px;
+        left: -2px;
+        padding: 6px;
+    }
+
+    .courses-level-btn--mobile::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 36px;
+        height: 36px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.57872 0.15471C5.7771 -0.0515704 6.04939 -0.0515704 6.24778 0.15471L11.6002 5.50717C11.7986 5.71345 11.7986 5.96995 11.6002 6.17623L10.9312 6.84529C10.7328 7.05157 10.4605 7.05157 10.2621 6.84529L5.91306 2.49693L1.56437 6.84529C1.36599 7.05157 1.0937 7.05157 0.895313 6.84529L0.226255 6.17623C0.0278721 5.96995 0.0278721 5.71345 0.226255 5.50717L5.57872 0.15471Z' fill='black'/%3E%3Cpath d='M10.5889 6.5957L10.5518 6.56641L10.5459 6.56152L5.91309 1.92871L5.62891 2.21289L1.28125 6.56152L1.28027 6.56055L1.27441 6.56641C1.25676 6.58476 1.24373 6.59276 1.2373 6.5957C1.23401 6.59721 1.23136 6.59746 1.23047 6.59766H1.22852C1.22754 6.59742 1.22557 6.59702 1.22266 6.5957C1.21632 6.59281 1.20293 6.58532 1.18555 6.56738V6.56641L1.17969 6.56152L0.513672 5.89453C0.494724 5.87429 0.485925 5.85951 0.482422 5.85156C0.480695 5.84764 0.479792 5.84507 0.479492 5.84375V5.83984C0.479763 5.8386 0.480666 5.83605 0.482422 5.83203C0.486063 5.82377 0.495054 5.80759 0.515625 5.78613L5.86328 0.439453L5.86816 0.433594C5.88585 0.415199 5.89984 0.407221 5.90625 0.404297C5.90926 0.402948 5.91121 0.402547 5.91211 0.402344H5.91406C5.91495 0.402541 5.9176 0.402794 5.9209 0.404297L5.95801 0.433594L5.96387 0.438477L11.3115 5.78613H11.3105C11.3312 5.80767 11.3401 5.82375 11.3438 5.83203C11.3455 5.83605 11.3464 5.83856 11.3467 5.83984V5.84375C11.3464 5.8451 11.3455 5.84767 11.3438 5.85156L11.3105 5.89746L10.6475 6.56152L10.6465 6.56055L10.6416 6.56641C10.6242 6.58447 10.611 6.59266 10.6045 6.5957C10.6012 6.59721 10.5985 6.59746 10.5977 6.59766H10.5957C10.5948 6.59746 10.5922 6.59721 10.5889 6.5957Z' stroke='black' stroke-width='0.803907' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 30%;
+        background-position: center 20px;
+    }
+
+    .courses-level-btn p {
+        padding-left: 15px;
+        padding-right: 35px;
+    }
+
+    ol {
+        margin-bottom: 30px;
+    }
+
+    .courses-section {
+        margin-top: 120px;
+    }
+
+    .courses-tab--closed {
+        height: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    .courses-tab--closed .courses-level-btn--mobile {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        border: 2px solid #78AFF6;
+        top: -56px;
+        left: 0;
+        height: 60px;
+    }
+
+    .courses-tab--closed .courses-tab-top,
+  .courses-tab--closed .courses-tab-bottom {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .courses-tab--closed .courses-level-btn--mobile p {
+        padding-top: 0px;
+    }
+
+    .courses-tab--closed p {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .courses-tab--closed .courses-level-btn--mobile::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.10313 6.84529C6.30152 7.05157 6.57381 7.05157 6.77219 6.84529L12.1247 1.49283C12.323 1.28655 12.323 1.03005 12.1247 0.823768L11.4556 0.15471C11.2572 -0.05157 10.9849 -0.05157 10.7865 0.15471L6.43747 4.50307L2.08879 0.15471C1.8904 -0.05157 1.61811 -0.05157 1.41973 0.15471L0.750669 0.823768C0.552286 1.03005 0.552286 1.28655 0.750669 1.49283L6.10313 6.84529Z' fill='black'/%3E%3Cpath d='M11.1133 0.404297L11.0762 0.433594L11.0703 0.438477L6.4375 5.07129L6.15332 4.78711L1.80566 0.438477L1.80469 0.439453L1.79883 0.433594C1.78118 0.415242 1.76815 0.407236 1.76172 0.404297C1.75842 0.402794 1.75577 0.402541 1.75488 0.402344H1.75293C1.75195 0.402578 1.74998 0.402982 1.74707 0.404297C1.74073 0.407188 1.72735 0.414678 1.70996 0.432617V0.433594L1.7041 0.438477L1.03809 1.10547C1.01914 1.12571 1.01034 1.14049 1.00684 1.14844C1.00511 1.15236 1.00421 1.15493 1.00391 1.15625V1.16016C1.00418 1.1614 1.00508 1.16395 1.00684 1.16797C1.01048 1.17623 1.01947 1.19241 1.04004 1.21387L6.3877 6.56055L6.39258 6.56641C6.41027 6.5848 6.42425 6.59278 6.43066 6.5957C6.43368 6.59705 6.43563 6.59745 6.43652 6.59766H6.43848C6.43937 6.59746 6.44202 6.59721 6.44531 6.5957L6.48242 6.56641L6.48828 6.56152L11.8359 1.21387H11.835C11.8556 1.19233 11.8645 1.17625 11.8682 1.16797C11.8699 1.16395 11.8708 1.16144 11.8711 1.16016V1.15625C11.8708 1.1549 11.8699 1.15233 11.8682 1.14844L11.835 1.10254L11.1719 0.438477L11.1709 0.439453L11.166 0.433594C11.1486 0.415533 11.1354 0.407336 11.1289 0.404297C11.1256 0.402794 11.123 0.402541 11.1221 0.402344H11.1201C11.1192 0.402541 11.1166 0.402794 11.1133 0.404297Z' stroke='black' stroke-width='0.803907' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
+
+    .courses-section--special .header-h2 {
+        margin-bottom: 90px;
+    }
+
+    section.courses-section:nth-child(3) {
+        margin-top: 90px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -4327,8 +4492,4 @@ ol li {
         font-size: 32px;
         width: 100%;
     }
-}
-
-.side-btns {
-    display: none;
 }
