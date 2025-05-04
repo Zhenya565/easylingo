@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->SMTPSecure = 'ssl';
     $mail->Port      = 465;
     $mail->setFrom( 'w2188@yandex.ru', 'EasyLingo' );
-    $mail->addAddress( 'sergeywave@yandex.ru' );
+    $mail->addAddress( 'evgeny_shadrintsev@mail.ru' );
     $mail->addAddress( '' );
 
     $mail->isHTML(true);
