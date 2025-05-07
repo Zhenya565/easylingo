@@ -2583,6 +2583,13 @@ ol li {
     color: #000;
 }
 
+.ad-text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    color: #000;
+}
+
 .as-text:hover {
     text-decoration: none;
 }
@@ -4415,6 +4422,12 @@ ol li {
         -webkit-text-decoration-skip-ink: none;
         text-decoration-skip-ink: none;
         color: #000;
+    }
+
+    .ad-text {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
     }
 
     .ad-box-map {
