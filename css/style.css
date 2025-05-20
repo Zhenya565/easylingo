@@ -1476,12 +1476,15 @@ ol li {
     color: #000;
 }
 
-.footer-nav-two li a {
+.footer-nav-two li a,
+.footer-nav-two li p {
     text-decoration: underline;
     font-size: 14px;
+    cursor: pointer;
 }
 
-.footer-nav-two li a:hover {
+.footer-nav-two li a:hover,
+.footer-nav-two li p:hover {
     text-decoration: none;
 }
 

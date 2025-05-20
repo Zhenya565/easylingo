@@ -197,13 +197,18 @@ document.querySelectorAll( ".main-form" ).forEach( (form) => {
       const value = input.value.trim();
       let inputValid = true;
 
+      if (input.placeholder.includes( "Имя" )) {
+        if (value.length < 2) {
+          inputValid = false;
+          isValid = false;
+        }
+      }
+
       if (input.placeholder.includes( "телефона" )) {
         const phoneRegex = /^[\d\+\-\s\(\)]{7,}$/;
-        if (!phoneRegex.test( value )) {
+        if (!phoneRegex.test( value ) || value === "") {
           inputValid = false;
-        }
-        if (value === "") {
-          inputValid = false;
+          isValid = false;
         }
       }
 
@@ -217,14 +222,10 @@ document.querySelectorAll( ".main-form" ).forEach( (form) => {
       if (wasSubmitted) {
         input.classList.toggle( "invalid", !inputValid );
       }
-
-      if (input.placeholder.includes( "телефона" ) && !inputValid) {
-        isValid = false;
-      }
     } );
 
     submitBtn.disabled = !isValid;
-    return isValid; 
+    return isValid;
   };
 
   inputs.forEach( (input) => {
